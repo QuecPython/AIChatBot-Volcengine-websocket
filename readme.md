@@ -40,10 +40,9 @@ QuecPython 推出了基于豆包 Websocket 的 AI 聊天解决方案。该方案
 在开始之前，请确保您具备以下先决条件：
 
 - **硬件：**
-  - [EC800MCNLE QuecPython 标准开发板](https://python.quectel.com/doc/Getting_started/zh/evb/ec800x-evb.html)（含天线、Type-C 数据线等）
+  - [EC800MCNLE QuecDuino 开发板](https://python.quectel.com/doc/Getting_started/zh/evb/ec800x-duino-evb.html)（含天线、Type-C 数据线等）
     
-    > - 点击查看开发板的[原理图](https://python.quectel.com/wp-content/uploads/2024/09/EC800X_EVB_V1.1-SCH.pdf)和[丝印图](https://python.quectel.com/wp-content/uploads/2024/09/EC800X%E7%B3%BB%E5%88%97%E5%BC%80%E5%8F%91%E6%9D%BF%E4%B8%9D%E5%8D%B0.pdf)文档。
-    > - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c94028da201944df5ed4e0091)
+    > - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c9488358b01956e1f9cfb0257)
     
   - 电脑（Windows 7、Windows 10 或 Windows 11）
   
@@ -77,7 +76,7 @@ QuecPython 推出了基于豆包 Websocket 的 AI 聊天解决方案。该方案
 
 1. **连接硬件：**
    按照下图进行硬件连接：
-   <img src="./docs/zh/media/wire_connection.jpg" style="zoom:67%;" /> 
+   <img src="./media/wire_connection.jpg" style="zoom:67%;" /> 
    1. 将喇叭连接至图中标识有`SPK+`和`SPK-`的排针上。
    3. 在图示位置插入可用的 Nano SIM 卡。
    4. 将天线连接至标识有`LTE`字样的天线连接座上。
@@ -124,7 +123,7 @@ solution-AI/
 │   ├── logging.py
 │   ├── ...
 │   └── uwebsocket.py
-├── photo/
+├── media/
 │   └── wire_connection.jpg
 ├── fw/
 │   └── EC800MCNLER06A01M08_OCPU_QPY_TEST0228.zip
