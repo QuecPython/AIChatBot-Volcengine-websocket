@@ -53,7 +53,7 @@ QuecPython 推出了基于豆包 Websocket 的 AI 聊天解决方案。该方案
 - **软件：**
   - QuecPython 模块的 USB 驱动：[QuecPython_USB_Driver_Win10_ASR](https://images.quectel.com/python/2023/04/Quectel_Windows_USB_DriverA_Customer_V1.1.13.zip)
   - 调试工具 [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
-  - QuecPython [固件](https://github.com/QuecPython/AIChatBot-Volcengine-webRTC/releases/download/v1.0.0/EC600MCNLER06A01M08_OCPU_QPY_TEST0213.zip)
+  - QuecPython 固件(fw 文件夹中包含固件)
   - Python 文本编辑器（例如，[VSCode](https://code.visualstudio.com/)、[Pycharm](https://www.jetbrains.com/pycharm/download/)）
 
 ### 安装
