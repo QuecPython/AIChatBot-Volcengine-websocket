@@ -101,10 +101,10 @@ Flash the firmware to the development board according to the [instructions](http
 
   <img src="./media/wire_connection.jpg" style="zoom:67%;" />
 
-    1. Connect the speaker to the pin headers marked `SPK+` and `SPK-` in the diagram\.
-    2. Insert an available Nano SIM card in the position shown\.
-    3. Connect the antenna to the antenna connector marked `LTE`\.
-    4. Use a Type\-C data cable to connect the development board and the computer\.
+    1. Connect the speaker to the pin headers marked `SPK+` and `SPK-` in the diagram.
+    2. Insert an available Nano SIM card in the position shown.
+    3. Connect the antenna to the antenna connector marked `LTE`.
+    4. Use a Type-C data cable to connect the development board and the computer.
 
 2. **Download code to the device:**
 
