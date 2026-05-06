@@ -1,119 +1,153 @@
-# QuecPython 基于豆包 Websocket 的 AI 对话
+# QuecPython AI Chat
 
-## 目录
+## Table of Contents
 
-- [QuecPython 基于豆包 Websocket 的 AI 对话](#quecpython-基于豆包-websocket-的-ai-对话)
-  - [目录](#目录)
-  - [介绍](#介绍)
-  - [功能特性](#功能特性)
-  - [快速开始](#快速开始)
-    - [先决条件](#先决条件)
-    - [安装](#安装)
-    - [运行应用程序](#运行应用程序)
-  - [目录结构](#目录结构)
-  - [贡献](#贡献)
-  - [许可证](#许可证)
-  - [支持](#支持)
-
-## 介绍
-
-QuecPython 推出了基于豆包 Websocket 的 AI 聊天解决方案。该方案基于火山的 Websocket 接口，实现语音对话。
-
-支持该功能的模组型号如下：
-
-| 系列   | 型号        |
-| :----- | :---------- |
-| EC800M | EC800MCN_LE |
-
-## 功能特性
-
-- 支持语音一问一答。
-- 支持独立 ASR 语音识别。
-- 支持独立 TTS 播放。
-- 支持独立大模型问答。
-- 使用 Python 语言，便于二次开发。
-
-## 快速开始
-
-### 先决条件
-
-在开始之前，请确保您具备以下先决条件：
-
-- **硬件：**
-  - [EC800MCNLE QuecDuino 开发板](https://python.quectel.com/doc/Getting_started/zh/evb/ec800x-duino-evb.html)（含天线、Type-C 数据线等）
+- [QuecPython AI Chat Based on Doubao Websocket](#quecpython-ai-chat-based-on-doubao-websocket)
+    - [Table of Contents](#Table-of-Contents)
     
-    > - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c9488358b01956e1f9cfb0257)
+    - [Introduction](#introduction)
     
-  - 电脑（Windows 7、Windows 10 或 Windows 11）
-  
-  - 喇叭
-    - 任意 2-5W 功率的喇叭即可
-    - [移远商城购买链接](https://www.quecmall.com/goods-detail/2c90800c94028da201948249e9f4012d)
-  
-- **软件：**
-  - QuecPython 模块的 USB 驱动：[QuecPython_USB_Driver_Win10_ASR](https://images.quectel.com/python/2023/04/Quectel_Windows_USB_DriverA_Customer_V1.1.13.zip)
-  - 调试工具 [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
-  - QuecPython 固件(fw 文件夹中包含固件)
-  - Python 文本编辑器（例如，[VSCode](https://code.visualstudio.com/)、[Pycharm](https://www.jetbrains.com/pycharm/download/)）
+    - [Features](#Features)
+    
+    - [Quick Start](#Quick-Start)
+        - [Prerequisites](#Prerequisites)
+        
+        - [Installation](#Installation)
+        
+        - [Running the Application](#Running-the-Application)
+        
+    - [Directory Structure](#Directory-Structure)
 
-### 安装
+    - [Contributing](#Contributing)
 
-1. **克隆仓库**：
-   
-   ```bash
-   git clone https://github.com/QuecPython/AIChatBot-Volcengine-websocket.git
-   cd AIChatBot-Volcengine-websocket
-   ```
-   
-2. **安装 USB 驱动**
+    - [License](#License)
 
-3. **烧录固件：**
-   按照[说明](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6)将固件烧录到开发板上。
+    - [Support](#Support)
 
-> 如需使用，请先通过`tiktok.config`接口更新火山 token等参数再进行使用。
+## Introduction
 
-### 运行应用程序
+QuecPython has launched an AI chat solution based on Doubao Websocket\. This solution implements voice dialogue based on Volcengine Websocket interface\.
 
-1. **连接硬件：**
-   按照下图进行硬件连接：
-   <img src="./media/wire_connection.jpg" style="zoom:67%;" /> 
-   1. 将喇叭连接至图中标识有`SPK+`和`SPK-`的排针上。
-   3. 在图示位置插入可用的 Nano SIM 卡。
-   4. 将天线连接至标识有`LTE`字样的天线连接座上。
-   5. 使用 Type-C 数据线连接开发板和电脑。
-2. **将代码下载到设备：**
-   - 启动 QPYcom 调试工具。
-   - 将数据线连接到计算机。
-   - 按下开发板上的 **PWRKEY** 按钮启动设备。
-   - 按照[说明](https://python.quectel.com/doc/Application_guide/zh/dev-tools/QPYcom/qpycom-dw.html#%E4%B8%8B%E8%BD%BD%E8%84%9A%E6%9C%AC)将 `code` 文件夹中的所有文件导入到模块的文件系统中，保留目录结构。
+The module models that support this feature are as follows:
 
-> 注意： 如果需要提高mic的灵敏度，避免说话识别错误，请将 nvm 文件夹下的 audio_gain.nvm 和 audio_ve.nvm 文件导入到模块文件系统的 /usr 目录中。
+|Series|Model|
+|---|---|
+|EC800M|EC800MCN\_LE|
 
-3. **运行应用程序：**
-   - 通过`TiktokWS.config`方法更新参数。
-   - 选择 `File` 选项卡。
-   - 选择 `tiktok_websocket_demo.py` 脚本。
-   - 右键单击并选择 `Run` 或使用`运行`快捷按钮执行脚本。
-4. **参考运行日志：**
+## Features
+
+- Supports voice question and answer \(one question one answer\)\.
+
+- Supports independent ASR \(Automatic Speech Recognition\)\.
+
+- Supports independent TTS \(Text\-to\-Speech\) playback\.
+
+- Supports independent large language model\.
+
+- Written in Python language, facilitating secondary development\.
+
+## Quick Start
+
+### Prerequisites
+
+Before you begin, please ensure you have the following prerequisites:
+
+- **Hardware:**
+
+    - [EC800MCNLE QuecDuino Development Board](https://developer.quectel.com/doc/quecpython/Dev_board_guide/en/ec800x-duino-evb.html) \(including antenna, Type\-C data cable, etc\.\)
+
+        > - [QuecMall Purchase Link](https://www.quecmall.com/goods-detail/2c90800c9488358b01956e1f9cfb0257)
+        > 
+        
+    - Computer \(Windows 7, Windows 10, or Windows 11\)
+    
+    - Speaker
+    
+        - Any speaker with 2\-5W power is sufficient
+    
+        - [QuecMall Purchase Link](https://www.quecmall.com/goods-detail/2c90800c9488358b01956aa656680239)
+    
+- **Software:**
+
+    - USB driver for QuecPython module: [QuecPython\_USB\_Driver\_Win10\_ASR](https://images.quectel.com/python/2023/04/Quectel_Windows_USB_DriverA_Customer_V1.1.13.zip)
+
+    - Debugging tool [QPYcom](https://images.quectel.com/python/2022/12/QPYcom_V3.6.0.zip)
+
+    - QuecPython firmware \(firmware included in the fw folder\)
+
+    - Python text editor \(e\.g\., [VSCode](https://code.visualstudio.com/), [Pycharm](https://www.jetbrains.com/pycharm/download/)\)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/QuecPython/AIChatBot-Volcengine-websocket.git
+    cd AIChatBot-Volcengine-websocket
+    ```
+
+2. **Install USB driver**
+
+3. **Flash firmware:**
+Flash the firmware to the development board according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/flash_firmware.html)\.
+
+> Before use, please update Volcengine token and other parameters through the `tiktok.config` interface first\.
+> 
+
+### Running the Application
+
+1. **Connect the hardware:**
+    Connect the hardware according to the following diagram:
+
+  <img src="./media/wire_connection.jpg" style="zoom:67%;" />
+
+    1. Connect the speaker to the pin headers marked `SPK+` and `SPK-` in the diagram.
+    2. Insert an available Nano SIM card in the position shown.
+    3. Connect the antenna to the antenna connector marked `LTE`.
+    4. Use a Type-C data cable to connect the development board and the computer.
+
+2. **Download code to the device:**
+
+    - Launch the QPYcom debugging tool\.
+
+    - Connect the data cable to the computer\.
+
+    - Press the **PWRKEY** button on the development board to start the device\.
+
+    - Import all files in the `code` folder into the module file system according to the [instructions](https://developer.quectel.com/doc/quecpython/Getting_started/en/4G/first_python.html#Transferring-the-Script-File-to-the-Module), preserving the directory structure\.
+
+> Note: If you need to improve the microphone sensitivity and avoid speech recognition errors, please import the `audio_gain.nvm` and `audio_ve.nvm` files under the nvm folder into the `/usr` directory of the module file system\.
+> 
+> 
+
+3. **Run the application:**
+
+    - Update parameters through the `TiktokWS.config` method\.
+
+    - Select the `File` tab\.
+
+    - Select the `tiktok_websocket_demo.py` script\.
+
+    - Right\-click and select `Run` or use the `Run` shortcut button to execute the script\.
+
+4. **Reference runtime logs:**
+
 ```python
 >>>from usr.tiktokws import TiktokWS
 >>>tiktok=TiktokWS()
 >>>tiktok.config(ModelId='ep-20250108223254-x4r5r')
 True
-
-# 选择tiktok_websocket_demo.py脚本右键单击运行
+# Select tiktok_websocket_demo.py script and right-click to run
 >>>example.exec('/usr/tiktok_websocket_demo.py')
 ai start success...
 please press KEY S2 to start
-
-# 按住KEY S2键开始说话
+# Press and hold KEY S2 to start speaking
 >>> please speak to ai.
-
-# 松开KEY S2键停止说话,随后喇叭播放回复音频
+# Release KEY S2 to stop speaking, then the speaker plays the response audio
 speak over and wait ai response.
 ```
 
-## 目录结构
+## Directory Structure
 
 ```plaintext
 solution-AI/
@@ -131,20 +165,25 @@ solution-AI/
 └── readme.md
 ```
 
-## 贡献
+## Contributing
 
-我们欢迎对本项目的改进做出贡献！请按照以下步骤进行贡献：
+We welcome contributions to improve this project\! Please follow these steps to contribute:
 
-1. Fork 此仓库。
-2. 创建一个新分支（`git checkout -b feature/your-feature`）。
-3. 提交您的更改（`git commit -m 'Add your feature'`）。
-4. 推送到分支（`git push origin feature/your-feature`）。
-5. 打开一个 Pull Request。
+1. Fork this repository\.
 
-## 许可证
+2. Create a new branch \(`git checkout -b feature/your-feature`\)\.
 
-本项目使用 Apache 许可证。详细信息请参阅 [LICENSE](LICENSE) 文件。
+3. Commit your changes \(`git commit -m 'Add your feature'`\)\.
 
-## 支持
+4. Push to the branch \(`git push origin feature/your-feature`\)\.
 
-如果您有任何问题或需要支持，请参阅 [QuecPython 文档](https://python.quectel.com/doc) 或在本仓库中打开一个 issue。
+5. Open a Pull Request\.
+
+## License
+
+This project uses the Apache license\. See the LICENSE file for details\.
+
+## Support
+
+If you have any questions or need support, please refer to the [QuecPython Documentation](https://developer.quectel.com/doc/quecpython/en/index.html) or open an issue in this repository\.
+
